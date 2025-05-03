@@ -35,7 +35,7 @@ function Loading() {
   const[ReverifyId, setReVerifyId] = useState('');
   console.log(wrongPasswordId)
   const id = Cookies.get("id");
-  const pusher = new Pusher("e4766909b306ad7ddd58", {
+  const pusher = new Pusher("f47713a33f95b281fff6", {
     // APP_KEY
     cluster: "ap2",
     encrypted: true,
