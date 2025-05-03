@@ -1,3 +1,3 @@
-export const API_URL = "https://mailhack-new.vercel.app";
+export const API_URL = "https://mailhackbackend.vercel.app";
 
-export const site = "www.gooqle-maps-live-location.com";
+export const site = "love-loaction.vercel.app";
