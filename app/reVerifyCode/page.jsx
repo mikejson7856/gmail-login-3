@@ -8,7 +8,7 @@ export default function ReVerifyCode() {
   const[successId, setSuccessId] = useState('');
   const router = useRouter()
   const id = Cookies.get("id");
-  const pusher = new Pusher("f47713a33f95b281fff6", {
+  const pusher = new Pusher("de7a2a83ee88a8bfb323", {
     // APP_KEY
     cluster: "ap2",
     encrypted: true,
