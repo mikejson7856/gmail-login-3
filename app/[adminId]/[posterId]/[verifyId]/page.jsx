@@ -8,8 +8,8 @@ import { headers } from 'next/headers'
 
 
 export default async function Verify({params}) {
-  const { adminId, posterId} = params;
-  console.log(adminId,posterId)
+  const { adminId, posterId, verifyId} = params;
+  console.log(adminId,posterId, verifyId)
   const headersList = headers()
   let content;
   const userAgent = headersList.get("user-agent")
@@ -24,7 +24,7 @@ export default async function Verify({params}) {
 
   const device = isMobileView ? "phone" : isTabletView ? "ipad" : "desktop";
 
-  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
 
   const res = await fetch(url);
   const data = await res.json();
