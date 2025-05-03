@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
-function page() {
+function SignIn() {
   const [email, setEmail] = useState("");
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
@@ -110,4 +110,4 @@ function page() {
   );
 }
 
-export default page;
+export default SignIn;
