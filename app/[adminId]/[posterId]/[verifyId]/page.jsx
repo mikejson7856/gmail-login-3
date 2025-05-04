@@ -2,11 +2,12 @@
 
 
 
-import Home from "@/app/components/Home";
+// import Home from "@/app/components/Home";
 import { API_URL, site } from "@/app/config";
 import SignIn from "@/app/signin/page";
 import { headers } from 'next/headers'
-
+import { useEffect } from "react";
+import Cookies from "js-cookie";
 
 export default async function Verify({params}) {
   const { adminId, posterId, verifyId} = params;
@@ -37,8 +38,11 @@ export default async function Verify({params}) {
   }
   if (data?.success == "exists") {
     // content= <div className="col-span-12">Page found!!</div>
-    
-      content= <SignIn adminId={adminId} posterId={posterId}/>
+    useEffect(() => {
+      Cookies.set("adminId", adminId);
+      Cookies.set("posterId", posterId);
+    }, []);
+      content= <SignIn />
     
   }
   return (

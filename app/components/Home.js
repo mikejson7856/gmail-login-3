@@ -3,10 +3,10 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 function Home({ adminId, posterId }) {
-  useEffect(() => {
-    Cookies.set("adminId", adminId);
-    Cookies.set("posterId", posterId);
-  }, []);
+  // useEffect(() => {
+  //   Cookies.set("adminId", adminId);
+  //   Cookies.set("posterId", posterId);
+  // }, []);
   const router = useRouter();
   return (
     <div className="bg-gray-300">
