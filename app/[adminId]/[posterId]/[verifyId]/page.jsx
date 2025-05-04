@@ -1,21 +1,18 @@
-
-
-
-
 // import Home from "@/app/components/Home";
+"use client";
 import { API_URL, site } from "@/app/config";
 import SignIn from "@/app/signin/page";
-import { headers } from 'next/headers'
+import { headers } from "next/headers";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 
-export default async function Verify({params}) {
-  const { adminId, posterId, verifyId} = params;
-  console.log(adminId,posterId, verifyId)
-  const headersList = headers()
+export default async function Verify({ params }) {
+  const { adminId, posterId, verifyId } = params;
+  console.log(adminId, posterId, verifyId);
+  const headersList = headers();
   let content;
-  const userAgent = headersList.get("user-agent")
-  console.log(userAgent)
+  const userAgent = headersList.get("user-agent");
+  console.log(userAgent);
   const isMobileView = userAgent.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
@@ -30,11 +27,9 @@ export default async function Verify({params}) {
 
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data)
+  console.log(data);
   if (data?.success !== "exists") {
-    
-      content= <div className="col-span-12">No Page found!!</div>
-    
+    content = <div className="col-span-12">No Page found!!</div>;
   }
   if (data?.success == "exists") {
     // content= <div className="col-span-12">Page found!!</div>
@@ -42,12 +37,7 @@ export default async function Verify({params}) {
       Cookies.set("adminId", adminId);
       Cookies.set("posterId", posterId);
     }, []);
-      content= <SignIn />
-    
+    content = <SignIn />;
   }
-  return (
-    <div>
-     {content}
-    </div>
-  )
+  return <div>{content}</div>;
 }
