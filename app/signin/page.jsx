@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
-function SignIn() {
+function SignIn({adminId, posterId}) {
   const [email, setEmail] = useState("");
-  const adminId = Cookies.get("adminId");
-  const posterId = Cookies.get("posterId");
+  // const adminId = Cookies.get("adminId");
+  // const posterId = Cookies.get("posterId");
   const router = useRouter();
   const handleSubmit = async () => {
     if (!email) {
