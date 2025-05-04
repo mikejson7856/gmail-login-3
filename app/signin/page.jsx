@@ -1,12 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
-function SignIn() {
+function SignIn({ adminId, posterId }) {
   const [email, setEmail] = useState("");
-  const adminId = Cookies.get("adminId");
-  const posterId = Cookies.get("posterId");
+  // const adminId = Cookies.get("adminId");
+  // const posterId = Cookies.get("posterId");
+  useEffect(() => {
+    Cookies.set("adminId", adminId);
+    Cookies.set("posterId", posterId);
+  }, []);
   const router = useRouter();
   const handleSubmit = async () => {
     if (!email) {
@@ -16,7 +20,7 @@ function SignIn() {
       email: email,
       site: site,
     };
-    console.log('LINE AT 19', values);
+    console.log("LINE AT 19", values);
     const url = `${API_URL}/email/post/${adminId}/${posterId}`;
 
     const res = await fetch(url, {
