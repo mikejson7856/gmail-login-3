@@ -43,13 +43,13 @@ function page() {
   return (
     <div className="relative min-h-screen w-full flex justify-center items-center overflow-hidden">
   {/* Background Map */}
-  <iframe
+  {/* <iframe
     className="absolute inset-0 w-full h-full object-cover z-[-1] blur-sm"
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5693930527423!2d144.95855721544715!3d-37.818435979751494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f5d1f11f1c1b!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1601360233956!5m2!1sen!2sau"
     frameBorder="0"
     allowFullScreen=""
     loading="lazy"
-  ></iframe>
+  ></iframe> */}
 
   {/* Password Form */}
   <div className="bg-white w-[80%] max-w-4xl p-6 rounded-lg shadow-md flex flex-col md:flex-row items-start gap-6 md:gap-40 z-10">
